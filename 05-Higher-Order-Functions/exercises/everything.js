@@ -1,4 +1,4 @@
-const loopEvery = (array, test) => {
+const every1 = (array, test) => {
   for (let i = 0; i < array.length; i++) {
     if (!test(array[i])) return false
   }
@@ -6,4 +6,4 @@ const loopEvery = (array, test) => {
   return true
 }
 
-const every = (array, test) => !array.some(value => !test(value))
+const every2 = (array, test) => !array.some(value => !test(value))

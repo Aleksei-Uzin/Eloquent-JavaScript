@@ -19,7 +19,7 @@ function textScripts(text, field = 'name') {
 console.log(textScripts('英国的狗说"woof", 俄罗斯的狗说"тяв"'))
 
 /**
- * Dominant writing direction
+ * Exercise: Dominant writing direction
  *
  */
 
@@ -27,9 +27,9 @@ function dominantDirection(text) {
   let counted = countBy(text, char => {
     let script = characterScript(char.codePointAt(0))
     return script ? script.direction : 'none'
-  }).filter(({ name }) => name != 'none')
+  }).filter(({ name }) => name !== 'none')
 
-  if (counted.length == 0) return 'ltr'
+  if (counted.length === 0) return 'ltr'
 
   return counted.reduce((acc, val) => (acc.count > val.count ? acc : val)).name
 }
